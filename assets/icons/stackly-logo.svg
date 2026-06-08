@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" fill="none" aria-hidden="true">
+  <!-- Stacked bars icon -->
+  <rect x="2" y="22" width="24" height="6" rx="2" fill="#6366F1" opacity="0.45"/>
+  <rect x="2" y="14" width="24" height="6" rx="2" fill="#06B6D4" opacity="0.7"/>
+  <rect x="2" y="6" width="24" height="6" rx="2" fill="#A855F7"/>
+  <!-- Text: Stackly -->
+  <text x="36" y="27" font-family="Montserrat, Poppins, sans-serif" font-size="20" font-weight="700" fill="currentColor">Stackly</text>
+  <!-- Divider -->
+  <line x1="136" y1="8" x2="136" y2="32" stroke="currentColor" stroke-width="1.5" opacity="0.25"/>
+  <!-- Corporate Solutions text -->
+  <text x="144" y="19" font-family="Montserrat, Poppins, sans-serif" font-size="8" font-weight="600" fill="currentColor" opacity="0.55" letter-spacing="1">CORPORATE</text>
+  <text x="144" y="30" font-family="Montserrat, Poppins, sans-serif" font-size="8" font-weight="600" fill="currentColor" opacity="0.55" letter-spacing="1">SOLUTIONS</text>
+</svg>
