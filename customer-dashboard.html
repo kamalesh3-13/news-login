@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journalist Dashboard — Stackly News & Magazine</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <style>
+    :root { --color-primary: #059669; --color-primary-dark: #047857; --color-secondary: #0891B2; --color-accent: #7C3AED; --shadow-glow: 0 8px 30px rgba(5,150,105,0.35); --gradient-main: linear-gradient(135deg, #059669 0%, #0891B2 50%, #7C3AED 100%); --gradient-soft: linear-gradient(135deg, rgba(5,150,105,0.1), rgba(8,145,178,0.1)); }
+  </style>
+</head>
+<body class="customer-dashboard">
+  <div class="dashboard-layout">
+    <div class="sidebar-overlay"></div>
+
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-brand">
+        <a href="customer-dashboard.html" class="stackly-logo stackly-logo--color" aria-label="Stackly News & Magazine">
+          <img src="assets/images/stackly-logo-main.webp" alt="Stackly News & Magazine" style="height:40px;width:auto;max-width:180px;object-fit:contain;">
+        </a>
+        <button class="sidebar-close" aria-label="Close sidebar"><i class="fas fa-times"></i></button>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="sidebar-link active" data-section="dashboard"><i class="fas fa-th-large"></i> Dashboard</a>
+        <a href="#" class="sidebar-link" data-section="tasks"><i class="fas fa-pen-nib"></i> My Articles</a>
+        <a href="#" class="sidebar-link" data-section="meetings"><i class="fas fa-calendar-alt"></i> Briefings</a>
+        <a href="#" class="sidebar-link" data-section="benefits"><i class="fas fa-gift"></i> Tools & Resources</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="sidebar-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+    </aside>
+
+    <div class="dashboard-main">
+      <header class="dashboard-navbar">
+        <div class="navbar-left">
+          <button class="sidebar-toggle" aria-label="Toggle sidebar"><i class="fas fa-bars"></i></button>
+          <a href="customer-dashboard.html" class="stackly-logo stackly-logo--color mobile-nav-logo" aria-label="Stackly News">
+            <img src="assets/images/stackly-logo-main.webp" alt="Stackly" style="height:32px;width:auto;object-fit:contain;">
+          </a>
+          <div class="navbar-search">
+            <i class="fas fa-search"></i>
+            <input type="search" placeholder="Search stories, beats...">
+          </div>
+        </div>
+        <div class="navbar-right">
+          <span class="role-badge" data-user-role>Journalist</span>
+          <button class="navbar-logout-btn" id="navbarLogoutBtn" title="Logout">
+            <i class="fas fa-sign-out-alt"></i><span>Logout</span>
+          </button>
+          <div class="user-profile">
+            <div class="user-avatar">J</div>
+            <div class="user-info">
+              <span class="user-name" data-user-name>Journalist</span>
+              <span class="user-email" data-user-email>journalist@stacklynews.com</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+
+        <!-- Section 1: Dashboard -->
+        <section class="dashboard-section active" id="section-dashboard">
+          <div class="section-panel-inner">
+            <div class="page-header" data-aos="fade-up">
+              <h1>Welcome back, <span data-user-name>Reporter</span>!</h1>
+              <p>Your personal newsroom — stories, briefings, and readership at a glance.</p>
+            </div>
+            <div class="stats-grid">
+              <div class="stat-card" data-tilt data-aos="fade-up" data-aos-delay="50">
+                <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
+                <div class="stat-details">
+                  <h3>Stories Assigned</h3>
+                  <div class="stat-value" data-counter="ordersPlaced">0</div>
+                </div>
+              </div>
+              <div class="stat-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                <div class="stat-details">
+                  <h3>Byline Score</h3>
+                  <div class="stat-value" data-counter="rewardPoints">0</div>
+                </div>
+              </div>
+              <div class="stat-card" data-tilt data-aos="fade-up" data-aos-delay="150">
+                <div class="stat-icon"><i class="fas fa-video"></i></div>
+                <div class="stat-details">
+                  <h3>Briefings Today</h3>
+                  <div class="stat-value" data-counter="reservations">0</div>
+                </div>
+              </div>
+              <div class="stat-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-icon"><i class="fas fa-check-double"></i></div>
+                <div class="stat-details">
+                  <h3>Published Stories</h3>
+                  <div class="stat-value" data-counter="couponsAvailable">0</div>
+                </div>
+              </div>
+            </div>
+            <div class="content-section" data-aos="fade-up">
+              <div class="section-header"><h3><i class="fas fa-bolt"></i> Newsroom Announcements</h3></div>
+              <div class="offers-grid">
+                <div class="offer-card" tabindex="0" role="button"><span class="offer-tag">New</span><h4>Q3 Editorial Calendar</h4><p>Review the updated editorial focus areas and align your story pitches accordingly.</p></div>
+                <div class="offer-card" tabindex="0" role="button"><span class="offer-tag">Event</span><h4>All-Newsroom Briefing</h4><p>Company-wide editorial briefing on Jun 12 at 3 PM. Join via Zoom.</p></div>
+                <div class="offer-card" tabindex="0" role="button"><span class="offer-tag">HR</span><h4>Press Pass Renewal</h4><p>Annual press credential renewals close Jun 30 — submit your ID verification.</p></div>
+              </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="content-section quick-actions-section" data-aos="fade-up">
+              <div class="section-header"><h3><i class="fas fa-bolt"></i> Quick Actions</h3></div>
+              <div class="quick-actions-grid">
+                <button class="quick-action-btn" data-section="tasks">
+                  <div class="qa-icon"><i class="fas fa-pen-nib"></i></div>
+                  <span>New Article</span>
+                </button>
+                <button class="quick-action-btn" data-section="meetings">
+                  <div class="qa-icon"><i class="fas fa-calendar-plus"></i></div>
+                  <span>Schedule Briefing</span>
+                </button>
+                <button class="quick-action-btn" data-section="benefits">
+                  <div class="qa-icon"><i class="fas fa-toolbox"></i></div>
+                  <span>My Tools</span>
+                </button>
+                <button class="quick-action-btn" data-section="tasks">
+                  <div class="qa-icon"><i class="fas fa-upload"></i></div>
+                  <span>Submit Draft</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Section 2: My Articles -->
+        <section class="dashboard-section" id="section-tasks">
+          <div class="section-panel-inner">
+            <div class="page-header" data-aos="fade-up">
+              <h1>My Articles</h1>
+              <p>Track your assigned stories and editorial milestones.</p>
+            </div>
+            <div class="table-card data-table-wrapper" data-per-page="5" data-aos="fade-up">
+              <div class="table-card-header">
+                <h3><i class="fas fa-clipboard-list"></i> Story List</h3>
+                <input type="search" class="table-search" placeholder="Search stories...">
+              </div>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr><th data-sort>Headline</th><th data-sort>Beat</th><th data-sort>Priority</th><th data-sort>Deadline</th><th data-sort>Status</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>AI in the Modern Newsroom</td><td>Technology</td><td>High</td><td>Jun 8</td><td><span class="status-badge completed">Published</span></td></tr>
+                    <tr><td>Renewable Energy Policy Shift</td><td>Science</td><td>Medium</td><td>Jun 12</td><td><span class="status-badge completed">Published</span></td></tr>
+                    <tr><td>City Council Budget Hearings</td><td>Politics</td><td>Low</td><td>Jun 18</td><td><span class="status-badge pending">Drafting</span></td></tr>
+                    <tr><td>Festival Season Preview</td><td>Culture</td><td>High</td><td>Jun 14</td><td><span class="status-badge pending">In Review</span></td></tr>
+                    <tr><td>Supply Chain Analysis Q2</td><td>Business</td><td>Medium</td><td>Jun 22</td><td><span class="status-badge cancelled">Blocked</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-pagination"></div>
+            </div>
+            <div class="content-section" data-aos="fade-up">
+              <div class="section-header"><h3><i class="fas fa-history"></i> Publishing Timeline</h3></div>
+              <div class="timeline">
+                <div class="timeline-item"><h4>Published: AI in the Modern Newsroom</h4><p>Technology Beat — 14,200 reads in 48 hours</p><div class="time">Jun 5, 2026</div></div>
+                <div class="timeline-item"><h4>Published: Renewable Energy Policy Shift</h4><p>Science Beat — Shortlisted for editorial award</p><div class="time">May 28, 2026</div></div>
+                <div class="timeline-item"><h4>Started: City Council Budget Hearings</h4><p>Politics Beat — First draft in progress</p><div class="time">May 22, 2026</div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: Briefings -->
+        <section class="dashboard-section" id="section-meetings">
+          <div class="section-panel-inner">
+            <div class="page-header" data-aos="fade-up">
+              <h1>Briefings</h1>
+              <p>Your upcoming and past editorial briefings, pitches, and reviews.</p>
+            </div>
+            <div class="content-section" data-aos="fade-up">
+              <div class="section-header"><h3><i class="fas fa-calendar-check"></i> Upcoming</h3><a href="#">Schedule</a></div>
+              <div class="fav-list">
+                <div class="fav-item">
+                  <div class="fav-item-icon-box"><i class="fas fa-video"></i></div>
+                  <div class="fav-item-info"><h4>Editorial Review — Tech Desk</h4><p>Jun 7, 2026 at 10:00 AM · 8 attendees · Zoom</p></div>
+                  <span class="status-badge confirmed">Confirmed</span>
+                </div>
+                <div class="fav-item">
+                  <div class="fav-item-icon-box"><i class="fas fa-users"></i></div>
+                  <div class="fav-item-info"><h4>All-Newsroom Briefing</h4><p>Jun 12, 2026 at 3:00 PM · All staff · Zoom</p></div>
+                  <span class="status-badge pending">Pending</span>
+                </div>
+              </div>
+            </div>
+            <div class="chart-card" data-aos="fade-up">
+              <div class="chart-header"><h3>Briefing Frequency (This Month)</h3></div>
+              <div class="chart-container sm"><canvas id="customerActivityChart"></canvas></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: Tools & Resources -->
+        <section class="dashboard-section" id="section-benefits">
+          <div class="section-panel-inner">
+            <div class="page-header" data-aos="fade-up">
+              <h1>Tools &amp; Resources</h1>
+              <p>Your editorial tools, press resources, and byline performance progress.</p>
+            </div>
+            <div class="content-section" data-aos="fade-up">
+              <div class="section-header"><h3><i class="fas fa-star"></i> Byline Level</h3></div>
+              <p style="font-size:0.9rem;color:var(--color-gray-500);">750 points until Senior Correspondent status</p>
+              <div class="loyalty-bar"><div class="loyalty-fill"></div></div>
+              <div class="loyalty-info"><span>1,250 points</span><span>Senior: 2,000 pts</span></div>
+            </div>
+            <div class="content-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1.25rem;">
+              <div class="content-section" data-aos="fade-up">
+                <div class="section-header"><h3><i class="fas fa-toolbox"></i> Editorial Tools</h3></div>
+                <div class="fav-list">
+                  <div class="fav-item">
+                    <div class="fav-item-icon-box" style="background:rgba(220,38,38,0.12);"><i class="fas fa-database" style="color:#DC2626;"></i></div>
+                    <div class="fav-item-info"><h4>Story Archive</h4><p>Accessed 12 times</p></div>
+                    <i class="fas fa-heart heart"></i>
+                  </div>
+                  <div class="fav-item">
+                    <div class="fav-item-icon-box" style="background:rgba(252,211,77,0.2);"><i class="fas fa-chart-bar" style="color:#D97706;"></i></div>
+                    <div class="fav-item-info"><h4>Readership Analytics</h4><p>Accessed 8 times</p></div>
+                    <i class="fas fa-heart heart"></i>
+                  </div>
+                  <div class="fav-item">
+                    <div class="fav-item-icon-box" style="background:rgba(248,113,113,0.12);"><i class="fas fa-comments" style="color:#EF4444;"></i></div>
+                    <div class="fav-item-info"><h4>Desk Chat</h4><p>Accessed 45 times</p></div>
+                    <i class="fas fa-heart heart"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="content-section" data-aos="fade-up">
+                <div class="section-header"><h3><i class="fas fa-lightbulb"></i> Recommended for You</h3></div>
+                <div class="menu-grid">
+                  <div class="menu-item-card corp-tool-card">
+                    <div class="corp-tool-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="menu-item-info"><h4>Investigative Writing</h4><div class="price">Free</div></div>
+                  </div>
+                  <div class="menu-item-card corp-tool-card">
+                    <div class="corp-tool-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="menu-item-info"><h4>Source Protection</h4><div class="price">Required</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="charts-grid">
+              <div class="chart-card span-6" data-aos="fade-up">
+                <div class="chart-header"><h3>Story Publication Trend</h3></div>
+                <div class="chart-container sm"><canvas id="customerOrdersChart"></canvas></div>
+              </div>
+              <div class="chart-card span-6" data-aos="fade-up">
+                <div class="chart-header"><h3>Time by Editorial Beat</h3></div>
+                <div class="chart-container sm"><canvas id="customerFavChart"></canvas></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/dashboard.js"></script>
+<script>
+  // ── Logo touch/click effect ──
+  document.querySelectorAll('.stackly-logo--color').forEach(function(el) {
+    el.addEventListener('touchstart', function() { el.classList.add('is-touched'); }, { passive: true });
+    el.addEventListener('touchend',   function() { setTimeout(function(){ el.classList.remove('is-touched'); }, 300); }, { passive: true });
+    el.addEventListener('touchcancel',function() { el.classList.remove('is-touched'); }, { passive: true });
+    el.addEventListener('click', function() {
+      el.classList.add('is-touched');
+      setTimeout(function(){ el.classList.remove('is-touched'); }, 350);
+    });
+  });
+
+  // ── Stat Card ripple + glow + press effect (same as sidebar nav) ──
+  function addStatCardEffect(card) {
+    function triggerEffect(e) {
+      card.classList.add('is-pressed');
+      card.classList.add('is-glowing');
+
+      var rect = card.getBoundingClientRect();
+      var x = (e.clientX || (e.touches && e.touches[0] && e.touches[0].clientX) || rect.left + rect.width / 2) - rect.left;
+      var y = (e.clientY || (e.touches && e.touches[0] && e.touches[0].clientY) || rect.top + rect.height / 2) - rect.top;
+      var size = Math.max(rect.width, rect.height) * 1.6;
+
+      var ripple = document.createElement('span');
+      ripple.className = 'stat-ripple';
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (x - size / 2) + 'px';
+      ripple.style.top  = (y - size / 2) + 'px';
+      card.appendChild(ripple);
+      setTimeout(function() { ripple.remove(); }, 700);
+
+      setTimeout(function() { card.classList.remove('is-glowing'); }, 520);
+    }
+    function releaseEffect() {
+      setTimeout(function() { card.classList.remove('is-pressed'); }, 220);
+    }
+
+    card.addEventListener('mousedown',  triggerEffect);
+    card.addEventListener('mouseup',    releaseEffect);
+    card.addEventListener('mouseleave', releaseEffect);
+    card.addEventListener('touchstart', triggerEffect, { passive: true });
+    card.addEventListener('touchend',   releaseEffect, { passive: true });
+    card.addEventListener('touchcancel',releaseEffect, { passive: true });
+  }
+
+  document.querySelectorAll('.stat-card').forEach(addStatCardEffect);
+
+  // ── Offer card click/touch effect ──
+  document.querySelectorAll('.offer-card').forEach(function(card) {
+    function activate(e) {
+      document.querySelectorAll('.offer-card').forEach(function(c) { c.classList.remove('is-active'); });
+      card.classList.add('is-active');
+      // ripple
+      var rect = card.getBoundingClientRect();
+      var x = (e.clientX || (e.touches && e.touches[0] && e.touches[0].clientX) || rect.left + rect.width/2) - rect.left;
+      var y = (e.clientY || (e.touches && e.touches[0] && e.touches[0].clientY) || rect.top + rect.height/2) - rect.top;
+      var size = Math.max(rect.width, rect.height) * 1.8;
+      var rip = document.createElement('span');
+      rip.className = 'offer-ripple';
+      rip.style.cssText = 'width:'+size+'px;height:'+size+'px;left:'+(x-size/2)+'px;top:'+(y-size/2)+'px;';
+      card.appendChild(rip);
+      setTimeout(function(){ rip.remove(); }, 650);
+      setTimeout(function(){ card.classList.remove('is-active'); }, 400);
+    }
+    card.addEventListener('click', activate);
+    card.addEventListener('touchstart', activate, { passive: true });
+    card.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') activate(e); });
+  });
+
+  // ── Quick Action buttons click/touch effect + navigate ──
+  document.querySelectorAll('.quick-action-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btn.classList.add('is-pressed');
+      setTimeout(function(){ btn.classList.remove('is-pressed'); }, 300);
+      var target = btn.getAttribute('data-section');
+      if (target) {
+        var link = document.querySelector('.sidebar-link[data-section="'+target+'"]');
+        if (link) link.click();
+      }
+    });
+    btn.addEventListener('touchstart', function() {
+      btn.classList.add('is-pressed');
+    }, { passive: true });
+    btn.addEventListener('touchend', function() {
+      setTimeout(function(){ btn.classList.remove('is-pressed'); }, 300);
+    }, { passive: true });
+  });
+
+  // ── Show mobile logo only on small screens ──
+  function toggleMobileLogo() {
+    var logo = document.querySelector('.mobile-nav-logo');
+    if (logo) logo.style.display = window.innerWidth <= 1024 ? 'inline-flex' : 'none';
+  }
+  toggleMobileLogo();
+  window.addEventListener('resize', toggleMobileLogo);
+</script>
+</body>
+</html>
